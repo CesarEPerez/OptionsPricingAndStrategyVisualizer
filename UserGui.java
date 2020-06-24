@@ -3,6 +3,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.Spring;
 import javax.swing.SpringLayout;
 
 public class UserGui {
@@ -23,16 +24,17 @@ public class UserGui {
         panel.setLayout(layout);
 
         JLabel label = new JLabel("Enter text:");
-        JTextField field = new JTextField("Enter Here", 15);
+        JTextField field = new JTextField("Enter Here", 10);
         JComboBox derivativeBox = new JComboBox(new String[] {"European", "American"});
         // label.setSize(50,20);
         // field.setSize(100,20);
 
-        layout.putConstraint(SpringLayout.EAST, derivativeBox, 0, SpringLayout.EAST, panel);
+        layout.putConstraint(SpringLayout.EAST, derivativeBox, 0, SpringLayout.EAST, field);
+        layout.putConstraint(SpringLayout.NORTH, derivativeBox, 10, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, label, 20, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, label, 10, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, label, 2, SpringLayout.SOUTH, derivativeBox);
         layout.putConstraint(SpringLayout.WEST, field, 20, SpringLayout.EAST, label);
-        layout.putConstraint(SpringLayout.NORTH, field, 10, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, field, 2, SpringLayout.SOUTH, derivativeBox);
         layout.putConstraint(SpringLayout.EAST, panel, 20, SpringLayout.EAST, field);
         layout.putConstraint(SpringLayout.SOUTH, panel, 10, SpringLayout.SOUTH, field);
 
