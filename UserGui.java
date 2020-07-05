@@ -60,7 +60,7 @@ class UserGui {
         panelFrame.add(panelOutputs);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // frame.setSize(700,600);
-        // frame.setResizable(false);
+        frame.setResizable(false);
 
         // create and position both ComboBoxes
         JComboBox derivativeBox = new JComboBox(new String[] {"European", "American"});
